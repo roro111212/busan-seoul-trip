@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산-경기-서울 2박3일 여행</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            /* 모바일 사이즈 제한 */
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: white;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            color: #764ba2;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #764ba2;
+        }
+
+        .time {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card h3 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .highlight {
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3e8ff;
+            color: #764ba2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+        }
+
+        .food-tag {
+            background: #ffe8e8;
+            color: #d63031;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>✈️ 부산 출발 경기/서울 여행</h1>
+            <p>2025.12.27(토) ~ 12.29(월)</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('day1')">Day 1<br><span
+                    style="font-size:0.7em; font-weight:normal">동탄/용인</span></button>
+            <button class="tab-btn" onclick="openTab('day2')">Day 2<br><span
+                    style="font-size:0.7em; font-weight:normal">서울 혜화</span></button>
+            <button class="tab-btn" onclick="openTab('day3')">Day 3<br><span
+                    style="font-size:0.7em; font-weight:normal">성수동</span></button>
+            <button class="tab-btn" onclick="openTab('budget')">Info<br><span
+                    style="font-size:0.7em; font-weight:normal">예산/숙소</span></button>
+        </div>
+
+        <div id="day1" class="content active">
+            <div class="timeline-item">
+                <span class="time">08:00</span>
+                <div class="card">
+                    <h3>🚄 부산역 출발 (SRT)</h3>
+                    <p>동탄역으로 이동 (약 2시간 20분 소요)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">10:30 - 11:30</span>
+                <div class="card">
+                    <h3>📍 동탄역 & 롯데백화점 도착</h3>
+                    <p>짐 보관 후 백화점 구경 시작</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">11:30 - 12:30</span>
+                <div class="card">
+                    <span class="tag food-tag">점심</span>
+                    <h3>🍔 멜팅소울 (롯데백화점)</h3>
+                    <p>햄버거 맛집 탐방 (지하 1층)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">13:00 - 14:00</span>
+                <div class="card">
+                    <h3>🚕 용인 한국민속촌 이동</h3>
+                    <p>택시 또는 버스 이용 이동</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">14:00 - 17:00</span>
+                <div class="card">
+                    <span class="tag">Main</span>
+                    <h3>👹 한국민속촌 관람</h3>
+                    <p>겨울 시즌 행사 및 전통 가옥 구경</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">18:00</span>
+                <div class="card">
+                    <h3>서울로 이동 & 체크인</h3>
+                    <p>서울(종로/중구) 숙소로 이동 후 휴식</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="day2" class="content">
+            <div class="timeline-item">
+                <span class="time">09:00 - 10:30</span>
+                <div class="card">
+                    <span class="tag food-tag" style="background:#e8f0fe; color:#1967d2;">Hot</span>
+                    <h3>🧥 동묘 구제시장 투어</h3>
+                    <p>GD도 다녀간 힙플레이스! 보물찾기 쇼핑</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">10:30 - 11:00</span>
+                <div class="card">
+                    <h3>🚌 대학로로 이동</h3>
+                    <p>버스 또는 지하철 이용 (가까움)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">11:00 - 12:00</span>
+                <div class="card">
+                    <h3>☕ 낙산공원 산책</h3>
+                    <p>서울 성곽길 따라 걷는 힐링 타임</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">12:00 - 13:00</span>
+                <div class="card">
+                    <span class="tag food-tag">점심</span>
+                    <h3>🍜 대학로 맛집</h3>
+                    <p>웨이팅 감안 여유로운 식사</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">13:00 - 15:00</span>
+                <div class="card">
+                    <span class="tag">문화</span>
+                    <h3>🎭 혜화역 연극 관람</h3>
+                    <p>대학로 소극장 공연 즐기기</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">15:30</span>
+                <div class="card">
+                    <h3>🚌 남산으로 이동</h3>
+                    <p>충무로역 2번출구 → 01번 순환버스 탑승 추천</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">16:30 - 18:30</span>
+                <div class="card">
+                    <span class="tag">Main</span>
+                    <h3>🗼 남산 N서울타워</h3>
+                    <p>전망대 관람 및 서울 일몰 감상</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">19:00 - 20:00</span>
+                <div class="card">
+                    <span class="tag food-tag">저녁</span>
+                    <h3>🍽️ 명동/을지로 저녁</h3>
+                    <p>남산 돈까스 혹은 힙지로 맛집 탐방</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="day3" class="content">
+            <div class="timeline-item">
+                <span class="time">10:00</span>
+                <div class="card">
+                    <h3>체크아웃 & 성수동 이동</h3>
+                    <p>짐 보관함(성수역) 이용 권장</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">11:00</span>
+                <div class="card">
+                    <span class="tag food-tag">Must Go</span>
+                    <h3>🍩 아임도넛 성수점</h3>
+                    <p>오픈런 추천! 도넛 포장 및 인증샷</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">12:30 - 13:30</span>
+                <div class="card">
+                    <span class="tag food-tag">점심</span>
+                    <h3>🍝 성수동 핫플 점심</h3>
+                    <p>카페거리 맛집 탐방</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">14:00</span>
+                <div class="card">
+                    <h3>🌳 서울숲 / 팝업스토어</h3>
+                    <p>성수동 소품샵 구경 및 서울숲 산책</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">16:00</span>
+                <div class="card">
+                    <h3>🚄 수서역 이동 (SRT)</h3>
+                    <p>수인분당선 이용 (서울숲역 → 수서역)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">17:00</span>
+                <div class="card">
+                    <h3>👋 부산으로 출발</h3>
+                    <p>즐거운 여행 종료!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="budget" class="content">
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid #764ba2;">
+                <h3>💰 1인 예상 경비</h3>
+                <p style="margin-top:10px;"><strong>총계: 약 350,000원 ~ 450,000원</strong></p>
+                <ul style="margin: 10px 0 0 20px; padding: 0; color: #555; font-size: 0.9rem;">
+                    <li>🚄 <strong>교통비 (SRT 왕복 + 시내):</strong> 약 110,000원</li>
+                    <li>🏠 <strong>숙박비 (2박, 1/N 기준):</strong> 약 100,000원 ~ 150,000원</li>
+                    <li>🍽️ <strong>식비/카페 (3일):</strong> 약 120,000원</li>
+                    <li>🎟️ <strong>입장료/문화생활:</strong> 약 40,000원</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-left: 4px solid #667eea;">
+                <h3>🏨 추천 숙소 위치</h3>
+                <p style="margin-top:10px; margin-bottom: 10px;"><strong>종로 / 을지로 / 명동 지역</strong></p>
+                <p style="font-size: 0.9rem;">이동이 편리하고 서울 중심부에 위치하여 어디든 가기 좋습니다.</p>
+                <ul style="margin: 10px 0 0 20px; padding: 0; color: #555; font-size: 0.9rem;">
+                    <li>📍 <strong>나인트리 프리미어 호텔 명동 II</strong></li>
+                    <li>📍 <strong>롯데시티호텔 명동</strong></li>
+                    <li>📍 <strong>호텔 국도 (을지로)</strong></li>
+                    <li>📍 <strong>신라스테이 광화문</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(dayId) {
+            // 모든 탭 버튼 비활성화
+            var buttons = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            // 모든 컨텐츠 숨기기
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+
+            // 선택된 탭과 컨텐츠 활성화
+            document.getElementById(dayId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
