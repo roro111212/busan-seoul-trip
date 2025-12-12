@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부산-경기-서울 2박3일 여행</title>
+    <title>부산-경기-서울 2박3일 알짜배기 여행</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
     <style>
@@ -37,7 +37,8 @@
 
         .header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            word-break: keep-all;
         }
 
         .header p {
@@ -57,14 +58,20 @@
 
         .tab-btn {
             flex: 1;
-            padding: 15px;
+            padding: 12px 5px;
             border: none;
             background: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             color: #888;
             cursor: pointer;
             transition: 0.3s;
+            line-height: 1.2;
+        }
+
+        .tab-btn span {
+            font-size: 0.75em;
+            font-weight: normal;
         }
 
         .tab-btn.active {
@@ -152,6 +159,36 @@
             background: #ffe8e8;
             color: #d63031;
         }
+
+        .stay-tag {
+            background: #e0f2f1;
+            color: #00695c;
+        }
+
+        .tip-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .tip-box h4 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            color: #f57f17;
+        }
+
+        .tip-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: #5d4037;
+        }
+
+        .tip-box li {
+            margin-bottom: 4px;
+        }
     </style>
 </head>
 
@@ -164,14 +201,10 @@
         </div>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('day1')">Day 1<br><span
-                    style="font-size:0.7em; font-weight:normal">동탄/용인</span></button>
-            <button class="tab-btn" onclick="openTab('day2')">Day 2<br><span
-                    style="font-size:0.7em; font-weight:normal">서울 혜화</span></button>
-            <button class="tab-btn" onclick="openTab('day3')">Day 3<br><span
-                    style="font-size:0.7em; font-weight:normal">성수동</span></button>
-            <button class="tab-btn" onclick="openTab('budget')">Info<br><span
-                    style="font-size:0.7em; font-weight:normal">예산/숙소</span></button>
+            <button class="tab-btn active" onclick="openTab('day1')">Day 1<br><span>동탄/용인</span></button>
+            <button class="tab-btn" onclick="openTab('day2')">Day 2<br><span>종로/명동</span></button>
+            <button class="tab-btn" onclick="openTab('day3')">Day 3<br><span>성수/고터</span></button>
+            <button class="tab-btn" onclick="openTab('info')">Tips<br><span>숙소/꿀팁</span></button>
         </div>
 
         <div id="day1" class="content active">
@@ -183,177 +216,203 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">10:30 - 11:30</span>
+                <span class="time">10:30</span>
                 <div class="card">
-                    <h3>📍 동탄역 & 롯데백화점 도착</h3>
-                    <p>짐 보관 후 백화점 구경 시작</p>
+                    <h3>📍 동탄역 & 롯데백화점</h3>
+                    <p>물품보관소 짐 보관 후 구경</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">11:30 - 12:30</span>
+                <span class="time">11:30</span>
                 <div class="card">
                     <span class="tag food-tag">점심</span>
                     <h3>🍔 멜팅소울 (롯데백화점)</h3>
-                    <p>햄버거 맛집 탐방 (지하 1층)</p>
+                    <p>지하 1층 맛집 (가벼운 점심)</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">13:00 - 14:00</span>
+                <span class="time">13:00</span>
                 <div class="card">
                     <h3>🚕 용인 한국민속촌 이동</h3>
-                    <p>택시 또는 버스 이용 이동</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <span class="time">14:00 - 17:00</span>
-                <div class="card">
-                    <span class="tag">Main</span>
-                    <h3>👹 한국민속촌 관람</h3>
-                    <p>겨울 시즌 행사 및 전통 가옥 구경</p>
+                    <p>택시(약 30분), 겨울 시즌 행사 관람</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <span class="time">18:00</span>
                 <div class="card">
-                    <h3>서울로 이동 & 체크인</h3>
-                    <p>서울(종로/중구) 숙소로 이동 후 휴식</p>
+                    <h3>🚌 서울로 이동</h3>
+                    <p>민속촌 앞 광역버스(4101번 등) → 명동/종로 방면</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">20:00</span>
+                <div class="card">
+                    <span class="tag stay-tag">숙소</span>
+                    <h3>♨️ 동묘 스파렉스 (찜질방)</h3>
+                    <p>동묘앞역 6번 출구 건물 12층 체크인</p>
                 </div>
             </div>
         </div>
 
         <div id="day2" class="content">
             <div class="timeline-item">
-                <span class="time">09:00 - 10:30</span>
+                <span class="time">09:30</span>
                 <div class="card">
-                    <span class="tag food-tag" style="background:#e8f0fe; color:#1967d2;">Hot</span>
                     <h3>🧥 동묘 구제시장 투어</h3>
-                    <p>GD도 다녀간 힙플레이스! 보물찾기 쇼핑</p>
+                    <p>아침 일찍 빈티지 보물찾기 (현금 필수!)</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">10:30 - 11:00</span>
-                <div class="card">
-                    <h3>🚌 대학로로 이동</h3>
-                    <p>버스 또는 지하철 이용 (가까움)</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <span class="time">11:00 - 12:00</span>
-                <div class="card">
-                    <h3>☕ 낙산공원 산책</h3>
-                    <p>서울 성곽길 따라 걷는 힐링 타임</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <span class="time">12:00 - 13:00</span>
+                <span class="time">11:30</span>
                 <div class="card">
                     <span class="tag food-tag">점심</span>
-                    <h3>🍜 대학로 맛집</h3>
-                    <p>웨이팅 감안 여유로운 식사</p>
+                    <h3>🍜 대학로 맛집 (혜화역)</h3>
+                    <p>동묘 → 혜화역 이동 후 식사</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">13:00 - 15:00</span>
+                <span class="time">13:00</span>
                 <div class="card">
                     <span class="tag">문화</span>
-                    <h3>🎭 혜화역 연극 관람</h3>
-                    <p>대학로 소극장 공연 즐기기</p>
+                    <h3>🎭 대학로 연극 관람</h3>
+                    <p>예매한 소극장 연극 (10분 전 도착 필수)</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <span class="time">15:30</span>
                 <div class="card">
                     <h3>🚌 남산으로 이동</h3>
-                    <p>충무로역 2번출구 → 01번 순환버스 탑승 추천</p>
+                    <p>충무로역 2번출구 → 01번 순환버스</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">16:30 - 18:30</span>
+                <span class="time">16:30</span>
                 <div class="card">
                     <span class="tag">Main</span>
                     <h3>🗼 남산 N서울타워</h3>
-                    <p>전망대 관람 및 서울 일몰 감상</p>
+                    <p>전망대/자물쇠존 & 일몰 야경 감상</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">19:00 - 20:00</span>
+                <span class="time">18:00</span>
+                <div class="card">
+                    <h3>🚌 명동으로 하산</h3>
+                    <p>01번 버스 → '남산예장환승센터' 하차</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">18:30</span>
                 <div class="card">
                     <span class="tag food-tag">저녁</span>
-                    <h3>🍽️ 명동/을지로 저녁</h3>
-                    <p>남산 돈까스 혹은 힙지로 맛집 탐방</p>
+                    <h3>🍽️ 명동 맛집</h3>
+                    <p>명동교자, 명동돈가스 등 취향껏 선택</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">19:30</span>
+                <div class="card">
+                    <span class="tag" style="background:#fff3e0; color:#e65100;">Hot Place</span>
+                    <h3>✨ 신세계백화점 본점</h3>
+                    <p>미디어파사드 인증샷 (서울중앙우체국 앞 명당)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">21:00</span>
+                <div class="card">
+                    <span class="tag stay-tag">숙소</span>
+                    <h3>🏨 왕십리 '스테이 여유'</h3>
+                    <p>명동 → 왕십리역(2호선) 이동 및 체크인</p>
                 </div>
             </div>
         </div>
 
         <div id="day3" class="content">
             <div class="timeline-item">
+                <span class="time">09:40</span>
+                <div class="card">
+                    <h3>체크아웃 & 성수 이동</h3>
+                    <p>왕십리역 → 성수역 (지하철 5분) <strong>*짐 지참</strong></p>
+                </div>
+            </div>
+            <div class="timeline-item">
                 <span class="time">10:00</span>
                 <div class="card">
-                    <h3>체크아웃 & 성수동 이동</h3>
-                    <p>짐 보관함(성수역) 이용 권장</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <span class="time">11:00</span>
-                <div class="card">
                     <span class="tag food-tag">Must Go</span>
-                    <h3>🍩 아임도넛 성수점</h3>
-                    <p>오픈런 추천! 도넛 포장 및 인증샷</p>
+                    <h3>🍩 성수동 카페거리</h3>
+                    <p>아임도넛 오픈런 & 팝업스토어 짧은 구경</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">12:30 - 13:30</span>
+                <span class="time">11:30</span>
                 <div class="card">
-                    <span class="tag food-tag">점심</span>
-                    <h3>🍝 성수동 핫플 점심</h3>
-                    <p>카페거리 맛집 탐방</p>
+                    <h3>🚌 고속터미널로 이동</h3>
+                    <p>성수(2호선) → 교대 → 고속터미널(3호선)</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">14:00</span>
-                <div class="card">
-                    <h3>🌳 서울숲 / 팝업스토어</h3>
-                    <p>성수동 소품샵 구경 및 서울숲 산책</p>
+                <span class="time" style="color:#d32f2f; font-weight:bold;">12:10 (중요)</span>
+                <div class="card" style="border-left-color:#d32f2f;">
+                    <h3>🛅 짐 보관 (T-Locker)</h3>
+                    <p>고속터미널역 도착 즉시 보관함 확보 필수!</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">16:00</span>
+                <span class="time">12:30</span>
                 <div class="card">
-                    <h3>🚄 수서역 이동 (SRT)</h3>
-                    <p>수인분당선 이용 (서울숲역 → 수서역)</p>
+                    <span class="tag food-tag">점심/쇼핑</span>
+                    <h3>🛍️ 파미에 & 고투몰</h3>
+                    <p>점심 식사 후 지하상가/꽃시장 쇼핑</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <span class="time">17:00</span>
+                <span class="time" style="color:#d32f2f; font-weight:bold;">15:00</span>
+                <div class="card" style="border-left-color:#d32f2f;">
+                    <h3>⚠️ 짐 찾기 & 수서 이동</h3>
+                    <p>15:20 전에 지하철 탑승해야 안전 (수서까지 약 20분)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">15:50</span>
                 <div class="card">
-                    <h3>👋 부산으로 출발</h3>
-                    <p>즐거운 여행 종료!</p>
+                    <h3>📍 수서역 도착</h3>
+                    <p>화장실 이용 및 탑승 준비</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">16:21</span>
+                <div class="card">
+                    <h3>🚄 부산행 SRT 출발</h3>
+                    <p>부산으로 귀가 (19:00 경 도착)</p>
                 </div>
             </div>
         </div>
 
-        <div id="budget" class="content">
+        <div id="info" class="content">
+            <div class="tip-box">
+                <h4>💡 일차별 핵심 꿀팁</h4>
+                <ul>
+                    <li><strong>1일차 (추위 대비):</strong> 12월 말 민속촌은 매우 춥습니다. 핫팩, 목도리, 장갑 필수! SRT는 미리 예매하세요.</li>
+                    <li><strong>1일차 (숙소):</strong> 스파렉스는 주말에 붐빕니다. 수면용 귀마개를 챙기면 좋습니다.</li>
+                    <li><strong>2일차 (현금):</strong> 동묘 구제시장은 대부분 현금/계좌이체만 받습니다. 마스크 착용 추천.</li>
+                    <li><strong>2일차 (구경):</strong> 신세계 미디어파사드 명당은 '서울중앙우체국' 앞입니다.</li>
+                    <li><strong>3일차 (짐 보관):</strong> 성수 보관함은 자리가 없을 수 있으니 가볍게 포장만 하고, 고터 도착 즉시 보관함(T-Locker)부터 찾으세요.
+                    </li>
+                </ul>
+            </div>
+
             <div class="card" style="margin-bottom: 20px; border-left: 4px solid #764ba2;">
-                <h3>💰 1인 예상 경비</h3>
-                <p style="margin-top:10px;"><strong>총계: 약 350,000원 ~ 450,000원</strong></p>
+                <h3>🏨 이용 숙소 정보</h3>
                 <ul style="margin: 10px 0 0 20px; padding: 0; color: #555; font-size: 0.9rem;">
-                    <li>🚄 <strong>교통비 (SRT 왕복 + 시내):</strong> 약 110,000원</li>
-                    <li>🏠 <strong>숙박비 (2박, 1/N 기준):</strong> 약 100,000원 ~ 150,000원</li>
-                    <li>🍽️ <strong>식비/카페 (3일):</strong> 약 120,000원</li>
-                    <li>🎟️ <strong>입장료/문화생활:</strong> 약 40,000원</li>
+                    <li><strong>1일차:</strong> 동묘 스파렉스 (동묘앞역 6번 출구)</li>
+                    <li><strong>2일차:</strong> 스테이 여유 (왕십리역 인근)</li>
                 </ul>
             </div>
 
             <div class="card" style="border-left: 4px solid #667eea;">
-                <h3>🏨 추천 숙소 위치</h3>
-                <p style="margin-top:10px; margin-bottom: 10px;"><strong>종로 / 을지로 / 명동 지역</strong></p>
-                <p style="font-size: 0.9rem;">이동이 편리하고 서울 중심부에 위치하여 어디든 가기 좋습니다.</p>
-                <ul style="margin: 10px 0 0 20px; padding: 0; color: #555; font-size: 0.9rem;">
-                    <li>📍 <strong>나인트리 프리미어 호텔 명동 II</strong></li>
-                    <li>📍 <strong>롯데시티호텔 명동</strong></li>
-                    <li>📍 <strong>호텔 국도 (을지로)</strong></li>
-                    <li>📍 <strong>신라스테이 광화문</strong></li>
-                </ul>
+                <h3>💰 쇼핑 팁</h3>
+                <p style="margin-top:10px; font-size: 0.9rem;"><strong>고투몰 (강남터미널 지하쇼핑몰)</strong></p>
+                <p style="font-size: 0.9rem; color:#666;">매우 넓어 길 잃기 쉽습니다. <strong>'G' 출구</strong> (고속터미널역 연결 방향)를
+                    기억해두세요. 꽃시장은 3층입니다.</p>
             </div>
         </div>
     </div>
